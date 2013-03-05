@@ -26,7 +26,7 @@ class DataHandler
       #           tests if file isn't '.' or '..'                 tests if file isn't a backup             tests if file is a map       tests if file exists
       #(                                                 )   (                                      )   (                            )    (                )
       if item != "#{mapPath}." and item != "#{mapPath}.." and /.+~/.match(File.extname(item)) == nil and File.extname(item) == ".tmx" and File.exist?(item)
-        @maps << item = TiledMap.new(item)
+        @maps << item = Map.new(item)
       else
         puts "#{item} IS NOT A LEVEL!"
         if File.extname(item) == ".pop"

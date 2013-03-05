@@ -1,4 +1,5 @@
 require "json"
+require "lib/classes/map.rb"
 
 class DataHandler
   attr_accessor :maps, :manifests
