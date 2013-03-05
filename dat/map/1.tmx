@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="50" tileheight="50">
+ <properties>
+  <property name="Background" value="1-1.png"/>
+ </properties>
+ <tileset firstgid="1" name="ground" tilewidth="50" tileheight="50" spacing="5">
+  <image source="../img/tile-sets/1-1-ground.png" width="490" height="500"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3VywqDMBAF0GltwbZ0V/3/T22EBEJRoSbuzoFLfK1yGTNHxHwwU9BbSxdTvqaflj7KNf20zsdvaNMyG/ro7+iZsXau66PdP/+lrW/op+zpeyV7HejjHHUf9UzU92v5hC7OsDcfe30MoY8zlLNh2f9Lyj3lltdrbPfwCn2coXSw7P0zZUx55HW5n/M3pZsxr+UdfQ3VWmftWT0jQwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc8wUNouBGQJwAAA==
+  </data>
+ </layer>
+</map>

@@ -15,3 +15,4 @@ java_import org.newdawn.slick.geom.Circle
 java_import org.newdawn.slick.opengl.renderer.Renderer
 java_import org.newdawn.slick.UnicodeFont
 java_import org.newdawn.slick.font.effects.ColorEffect
+java_import org.newdawn.slick.tiled.TiledMap

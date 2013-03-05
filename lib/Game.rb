@@ -1,17 +1,17 @@
+require "lib/classes/creature.rb"
+require "lib/classes/data.rb"
+
 class Game < BasicGame
   def init(container)
     @container = container
-    @x, @y = 100, 100
-    system('ls ../')
-    @meteor = Image.new('dat/img/meteor1.png')
+    @levelData = DataHandler.new("dat/")
   end
   
   def render(container, graphics)
-    @meteor.draw(@x,@y)
+    
   end
   
   def update(container, delta)
-    @x += 1
-    @y += 1
+    
   end
 end

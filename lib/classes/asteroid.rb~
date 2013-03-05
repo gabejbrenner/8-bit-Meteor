@@ -1,0 +1,4 @@
+class asteroid
+  def initialize
+  end
+end
