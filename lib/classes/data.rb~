@@ -1,23 +1,25 @@
 require "json"
 require "lib/classes/map.rb"
+require "lib/Slick.rb"
 
 class DataHandler
   attr_accessor :maps, :manifests
-  
-  def initialize(path)
+
+  def initialize(path, container)
     @maps = []
     @pops = []
     @backgrounds = []
+    @container = container
     @path = path
     self.fetchResources()
   end
-  
+
   def fetchResources()
     self.fetchMaps()
     self.fetchPops()
     self.fetchBackgrounds()
   end
-  
+
   def fetchMaps()
     mapPath = "#{@path}map/"
     fullMapListing = Dir.entries(mapPath)
@@ -26,7 +28,7 @@ class DataHandler
       #           tests if file isn't '.' or '..'                 tests if file isn't a backup             tests if file is a map       tests if file exists
       #(                                                 )   (                                      )   (                            )    (                )
       if item != "#{mapPath}." and item != "#{mapPath}.." and /.+~/.match(File.extname(item)) == nil and File.extname(item) == ".tmx" and File.exist?(item)
-        @maps << item = TiledMap.new(item)
+        @maps << item = Map.new(item, @container)
       else
         puts "#{item} IS NOT A LEVEL!"
         if File.extname(item) == ".pop"
@@ -37,10 +39,11 @@ class DataHandler
       end
     end
   end
-  
+
   def fetchPops()
-    popPath = "#{@path}dat/pop/"
-    fullPopListing = Dir.each do |item|
+    popPath = "#{@path}pop/"
+    fullPopListing = Dir.entries(popPath)
+    fullPopListing = fullPopListing.each do |item|
       item = "#{popPath}#{item}"
       #       tests if file isn't '.' or '..'                     tests if file isn't a backup            tests if file is a pop file    tests if file exists
       #(                                                 )    (                                     )   (                            )   (                 )
@@ -56,7 +59,8 @@ class DataHandler
       end
     end
   end
-  
+
+=begin
   def fetchBackgrounds()
     backgroundPath = "#{@path}img/backgrounds/"
     fullBackgroundListing = Dir.entries(backgroundPath)
@@ -65,7 +69,7 @@ class DataHandler
       #        tests to make sure file isn't '.' or '..'                           tests to make sure file is an image file                   tests if file exists
       # (                                                              )    (                                                            )    (                 )
        if item != "#{backgroundPath}." and item != "#{backgroundPath}.." and File.extname(item) == ".png" or File.extname(item) == ".jpg" and File.exist?(item)
-        @backgrounds << item
+        @backgrounds << item = Image.new(item)
       else
         puts "#{item} IS NOT A BACKGROUND!"
         if File.extname(item) == ".tmx"
@@ -76,4 +80,5 @@ class DataHandler
       end
     end
   end
+=end
 end

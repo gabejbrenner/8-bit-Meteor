@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="50" tileheight="50">
+<map version="1.0" orientation="orthogonal" width="15" height="12" tilewidth="50" tileheight="50">
  <properties>
-  <property name="Background" value="background1.png"/>
+  <property name="Background" value="1-1.png"/>
  </properties>
  <tileset firstgid="1" name="ground" tilewidth="50" tileheight="50" spacing="5">
-  <image source="../img/tile-sets/ground-tile-set1.png" width="500" height="500"/>
+  <image source="../img/tile-sets/1-1-ground.png" width="490" height="500"/>
  </tileset>
- <layer name="Tile Layer 1" width="100" height="100">
+ <layer name="Tile Layer 1" width="15" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3USwqAIBQFUPtANmwQtP+VpvAGLiBU6By4qDiRd8GUAOAbT4Q56GJOVxPG08dc2j78Yf0tJXvJFmvNGnf3qEf9TO2gzr/O/Sg5S3Lsc5wBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD5eg163NECcAAA=
+   H4sIAAAAAAAAAxNjYGAQozMWHWJ6ydEnSqI+UTL0kIJ50ezipZE9IMyMxmcEYlYgZoHSTHj0cCOpB6njAmIOIOaE0lxIZsLM4YDSIDkAIcHEi9ACAAA=
   </data>
  </layer>
 </map>
