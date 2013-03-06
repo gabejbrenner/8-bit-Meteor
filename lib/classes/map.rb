@@ -25,6 +25,7 @@ class Map
   end
 
   def render()
+    @background.draw(0,0,@screenWidth/@background.getWidth.to_f)
     @map.render(@scrollX, @screenHeight-@mapHeightPx, @startXTile, @startYTile, @endXTile, @endYTile)
   end
 
