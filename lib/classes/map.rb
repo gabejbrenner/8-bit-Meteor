@@ -7,13 +7,24 @@ class Map
     @map = TiledMap.new(path)
     @screenWidth = container.getScreenWidth()
     @screenHeight = container.getScreenHeight()
+    @aspectRatio = self.getAspectRatio()
+    @background = Image.new("dat/img/backgrounds/#{@aspectRatio}/#{@map.getMapProperty("Background", "default.png")}")
     @mapWidthPx = @map.getWidth*@map.tileWidth
     @mapHeightPx = @map.getHeight*@map.tileHeight
     @scrollX, @startXTile, @startYTile, @endXTile, @endYTile = [0, 0, 0, @map.getWidth, @map.getHeight]
   end
 
+  def getAspectRatio()
+    parts = (@screenHeight/@screenWidth.to_r).to_s.split('/')
+    if parts = [5,8]
+      parts = [parts[0]*2,parts[1]*2]
+    else
+      parts = [4,3]
+    end
+    "#{parts[1]}:#{parts[0]}"
+  end
+
   def render()
-    puts @map.getMapProperty("Background","dat/img/default.png")
     @map.render(@scrollX, @screenHeight-@mapHeightPx, @startXTile, @startYTile, @endXTile, @endYTile)
   end
 
