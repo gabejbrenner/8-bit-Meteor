@@ -1,15 +1,17 @@
 require "lib/Slick.rb"
+require "json"
 
 class Map
-  attr_accessor :map
+  attr_accessor :map, :pop
 
   def initialize(path, container)
     @map = TiledMap.new(path)
-    @id = @map.getMapProperty("id", "100")
+    @pop = JSON.parse(File.read("dat/pop/#{@map.getMapProperty("pop", "0.pop")}"))
+    @id = @map.getMapProperty("id", "0")
     @screenWidth = container.getScreenWidth
     @screenHeight = container.getScreenHeight
     @aspectRatio = self.getAspectRatio
-    @background = Image.new("dat/img/backgrounds/#{@aspectRatio}/#{@map.getMapProperty("Background", "default.png")}")
+    @background = Image.new("dat/img/backgrounds/#{@aspectRatio}/#{@map.getMapProperty("background", "default.png")}")
     @mapWidthPx = @map.getWidth*@map.tileWidth
     @mapHeightPx = @map.getHeight*@map.tileHeight
     @scrollX, @startXTile, @startYTile, @endXTile, @endYTile = [0, 0, 0, @map.getWidth, @map.getHeight]

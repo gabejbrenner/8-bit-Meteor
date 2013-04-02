@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="15" height="12" tilewidth="50" tileheight="50">
  <properties>
-  <property name="Background" value="1-1.png"/>
-  <property name="Id" value="0"/>
+  <property name="background" value="1-1.png"/>
+  <property name="id" value="0"/>
+  <property name="pop" value="1.pop"/>
  </properties>
  <tileset firstgid="1" name="ground" tilewidth="50" tileheight="50" spacing="5">
   <image source="../img/tile-sets/1-1-ground.png" width="490" height="500"/>

@@ -13,7 +13,6 @@ class DataHandler
     @container = container
     @path = path
     self.fetchResources
-    @map = self.getMap(0)
   end
 
   def fetchResources

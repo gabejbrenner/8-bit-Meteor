@@ -12,11 +12,8 @@ class DataHandler
     @pops = []
     @container = container
     @path = path
-    self.fetchResources
-  end
-
-  def fetchResources
     self.fetchMaps
+    @map = self.getMap(0)
   end
 
   def fetchMaps
