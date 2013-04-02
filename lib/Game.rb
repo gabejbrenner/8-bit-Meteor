@@ -9,7 +9,6 @@ class Game < BasicGame
   end
 
   def render(container, graphics)
-    @levelData.maps[0].render()
   end
 
   def update(container, delta)
