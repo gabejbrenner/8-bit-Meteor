@@ -1,5 +1,5 @@
 {
   "creatures": [
-    "main.cre"
+    {"desc_file": "main.cre", "startX": 0, "startY": 0}
   ]
 }

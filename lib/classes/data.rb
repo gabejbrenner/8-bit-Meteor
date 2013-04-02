@@ -1,5 +1,6 @@
 require "json"
 require "lib/classes/map.rb"
+require "lib/classes/creature.rb"
 require "lib/Slick.rb"
 require "json"
 
@@ -9,7 +10,7 @@ class DataHandler
   def initialize(path, container)
     @currentMapId = 0
     @maps = []
-    @pops = []
+    @creatures = []
     @container = container
     @path = path
     self.fetchMaps
@@ -38,6 +39,9 @@ class DataHandler
 
   def getMap(index)
     @map = Map.new(@maps[@currentMapId = index], @container)
+    @map.pop["creatures"].each do |desc_file|
+      @creatures << Creature.new(@map, desc_file)
+    end
   end
 
   def nextMap()

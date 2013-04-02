@@ -1,15 +1,11 @@
-require "lib/slick.rb"
+require "lib/Slick.rb"
 require "lib/classes/data.rb"
 require "json"
 
 class Creature
 
-  def initialize(id, map, startX, startY)
-    @x = startX
-    @y = startY
-    @id = id
-    @map = map
-    @sprite = Image.new("dat/creature/#{@id}")
+  def initialize(map, desc_file)
+
   end
 
   def moveLeft
