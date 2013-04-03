@@ -1,4 +1,4 @@
-class asteroid
+class Asteroid
   def initialize
   end
 end

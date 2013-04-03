@@ -4,8 +4,12 @@ require "json"
 
 class Creature
 
-  def initialize(map, desc_file)
-
+  def initialize(map, creature)
+    @map = map
+    @desc_file = JSON.parse(File.read("dat/cre/#{creature["desc_file"]}"))
+    @startX = @desc_file["startX"]
+    @startY = @desc_file["startY"]
+    @spritesheet = Image.new("dat/img/spritesheets/#{@desc_file["spritesheet"]}")
   end
 
   def moveLeft

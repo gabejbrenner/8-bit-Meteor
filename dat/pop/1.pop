@@ -1,5 +1,5 @@
 {
   "creatures": [
-    {"desc_file": "main.cre", "startX": 0, "startY": 0}
+    {"desc_file": "dat/cre/main.cre", "startX": 0, "startY": 0}
   ]
 }

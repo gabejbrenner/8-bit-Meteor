@@ -6,8 +6,11 @@ class Creature
 
   def initialize(map, creature)
     @map = map
-    @desc_file = JSON.parse(File.read("dat/cre/#{creature["desc_file"]}"))
-    @startX = desc_file["startX"]
+    @description = JSON.parse(File.read(creature["desc_file"]))
+    @startX = @desc_file["startX"]
+    @startY = @desc_file["startY"]
+    @spritesheetData = JSON.parse(File.read(@description["spritesheet"]))
+    @spritesheet = Image.new(@spritesheetData["spritesheet"])
   end
 
   def moveLeft
